@@ -10,6 +10,7 @@ let currentDirection = "f"
 let jumped_back = false
 
 let dark = false;
+let animal = "dog";
 
 window.onload = function() {
     canvas = document.getElementById('animationCanvas');
@@ -30,12 +31,14 @@ function toggleDarkMode() {
         document.getElementById("darkModeButton").style.borderColor = "#b8f7bd";
         document.getElementById("darkModeButton").style.color = "black";
         document.getElementById("darkModeButton").innerText = "🌤";
+        animal = "cat"
 
     } else {
         document.getElementById("darkModeButton").style.backgroundColor = "#423e5e";
         document.getElementById("darkModeButton").style.borderColor = "#373d45";
         document.getElementById("darkModeButton").style.color = "white";
         document.getElementById("darkModeButton").innerText = "🌙";
+        animal = "dog"
 
     }
 
@@ -96,7 +99,7 @@ function createCanvas() {
 
     canvasContext.fillStyle = 'blue';
     const sprite = new Image();
-    sprite.src = `img/dog${currentFrame}${currentDirection}.PNG`;
+    sprite.src = `img/${animal}${currentFrame}${currentDirection}.PNG`;
     sprite.onload = function(){
         canvasContext.drawImage(sprite, x, y)
     }
