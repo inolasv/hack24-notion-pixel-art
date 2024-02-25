@@ -25,6 +25,20 @@ window.onload = function() {
 
 function toggleDarkMode() {
     dark = !dark;
+    if (dark) {
+        document.getElementById("darkModeButton").style.backgroundColor = "#cff0d1";
+        document.getElementById("darkModeButton").style.borderColor = "#b8f7bd";
+        document.getElementById("darkModeButton").style.color = "black";
+        document.getElementById("darkModeButton").innerText = "🌤";
+
+    } else {
+        document.getElementById("darkModeButton").style.backgroundColor = "#423e5e";
+        document.getElementById("darkModeButton").style.borderColor = "#373d45";
+        document.getElementById("darkModeButton").style.color = "white";
+        document.getElementById("darkModeButton").innerText = "🌙";
+
+    }
+
 }
 
 function make_bg() {
