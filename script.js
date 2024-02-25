@@ -9,6 +9,8 @@ let currentFrame = 1
 let currentDirection = "f"
 let jumped_back = false
 
+let dark = false;
+
 window.onload = function() {
     canvas = document.getElementById('animationCanvas');
     canvasContext = canvas.getContext('2d');
@@ -21,10 +23,17 @@ window.onload = function() {
 
 }
 
+function toggleDarkMode() {
+    dark = !dark;
+}
+
 function make_bg() {
-    console.log("hey")
     let bg_image = new Image();
-    bg_image.src = 'img/background.png';
+    if (dark) {
+        bg_image.src = 'img/darkbg.png';
+    } else {
+        bg_image.src = 'img/lightbg.png';
+    }
     bg_image.onload = function(){
         canvasContext.drawImage(bg_image, 0, 0);
     }
